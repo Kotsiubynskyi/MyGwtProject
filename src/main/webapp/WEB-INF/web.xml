@@ -24,8 +24,9 @@
         <filter-name>springSecurityFilterChain</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
     <welcome-file-list>
-        <welcome-file>/loginPage.jsp</welcome-file>
+        <welcome-file>/WEB-INF/pages/loginPage.jsp</welcome-file>
     </welcome-file-list>
 
     <listener>
