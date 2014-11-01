@@ -1,0 +1,75 @@
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+body {
+    background-color: #A2BFCF;
+}
+
+body, td, a, div, .p {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.gwt-TabLayoutPanel {
+    /*height: 100;*/
+}
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTabs {
+    background-color: inherit;
+    margin: 0px;
+    padding: 0px;
+    height: 30px;
+}
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelContent {
+    padding-right: 20px;
+    padding-left: 20px;
+    margin: 0px 20px 5px;
+}
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTab {
+    margin-left: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 3px 8px 3px 8px;
+    cursor: hand;
+    color: black;
+    border: 1px solid #f1ffff;
+    font-size: 0.8em;
+    color: #2e79bd;
+    text-align: center;
+    background: #f3fff6;
+}
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTab-selected {
+    cursor: default;
+    background: #2e79bd;
+    border: 1px solid #2b5c9b;
+    font-size: 0.8em;
+    color: #ffffff;
+}
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTab:not(.gwt-TabLayoutPanelTab-selected):hover {
+    cursor: default;
+    background: #30a4f6;
+    border: 1px solid #28a1f3;
+    cursor: pointer;
+    font-size: 0.8em;
+    color: #ffffff;
+}
+
+.margins {
+    margin: 0px 0px 2px 1px;
+    background-color: #bae0f0;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.pointer:hover {
+    cursor: pointer;
+}
+

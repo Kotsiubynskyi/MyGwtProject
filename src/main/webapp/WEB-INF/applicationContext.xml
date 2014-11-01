@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:user-service>
+                <security:user name="login" password="password"
+                               authorities="ROLE_USER, ROLE_ADMIN"/>
+            </security:user-service>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <security:http pattern="/loginPage" security="none"/>
+
+    <security:http auto-config='true'>
+        <security:form-login login-page="/loginPage"
+                             default-target-url="/gwt.html"
+                             username-parameter="username"
+                             password-parameter="password"/>
+        <security:intercept-url pattern="/**" access="ROLE_USER"/>
+    </security:http>
+
+</beans>
