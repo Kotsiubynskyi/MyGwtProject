@@ -16,7 +16,6 @@
     <context:component-scan base-package="ua.company.gwt"/>
     <mvc:resources mapping="*" location="/"/>
     <mvc:view-controller path="/loginPage" view-name="/loginPage"/>
-    <!--<mvc:view-controller path="/loginPage.jsp" view-name="/loginPage"/>-->
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>

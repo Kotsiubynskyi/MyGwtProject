@@ -12,10 +12,11 @@ public class LoginController {
     @RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
     public ModelAndView welcome() {
         boolean isAuthenticated = SecurityContextHolder.getContext().getAuthentication().isAuthenticated();
+        System.out.println(isAuthenticated);
         if (isAuthenticated) {
             return new ModelAndView("redirect:/gwt.html");
         } else {
-            return new ModelAndView("/loginPage");
+            return new ModelAndView("loginPage");
         }
     }
 }
