@@ -12,7 +12,7 @@
 
     <import resource="applicationContext.xml"/>
 
-    <context:annotation-config/>
+    <mvc:annotation-driven/>
     <context:component-scan base-package="ua.company.gwt"/>
     <mvc:resources mapping="*" location="/"/>
     <mvc:view-controller path="/loginPage" view-name="/loginPage"/>
