@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Login to SuperUser</title>
-    <%--<link rel="stylesheet" href="loginPage.css"/>--%>
+    <link rel="stylesheet" href="<c:url value='/styles/loginPage.css'></c:url>"/>
 
 </head>
 <body>

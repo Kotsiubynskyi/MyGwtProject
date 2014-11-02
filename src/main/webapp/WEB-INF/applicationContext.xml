@@ -14,6 +14,7 @@
     </security:authentication-manager>
 
     <security:http pattern="/loginPage" security="none"/>
+    <security:http pattern="/styles/*" security="none"/>
 
     <security:http auto-config='true'>
         <security:form-login login-page="/loginPage"
