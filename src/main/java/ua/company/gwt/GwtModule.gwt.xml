@@ -3,11 +3,12 @@
         "http://google-web-toolkit.googlecode.com/svn/tags/2.5.0/distro-source/core/src/gwt-module.dtd">
 <module rename-to="Gwt">
 
+    <inherits name='com.google.gwt.user.User'/>
     <inherits name='com.sencha.gxt.ui.GXT'/>
-    <inherits name='com.sencha.gxt.theme.neptune.Theme'/>
-    <set-property name="gxt.user.agent" value="chrome"/>
-    <!--<extend-property name="gxt.user.agent" values="ie10,ie9,ie8,gecko1_8"/>-->
-    <entry-point class='ua.company.gwt.client.GwtEntryPoint'/>
+    <entry-point class='ua.company.gwt.client.SuperUser'/>
     <servlet path='/Gwt/gwtService' class='ua.company.gwt.server.GwtServiceImpl'/>
+    <servlet path='/Gwt/panelService' class='ua.company.gwt.server.AsyncPanelLoadingServiceImpl'/>
+
+    <source path="client"/>
 
 </module>

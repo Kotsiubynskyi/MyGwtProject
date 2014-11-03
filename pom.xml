@@ -15,7 +15,7 @@
     </properties>
 
     <build>
-        <finalName>MyGWT</finalName>
+        <finalName>MyGWT.war</finalName>
         <plugins>
 
             <!--GWT plugin for javascript compilation-->
@@ -88,11 +88,6 @@
         <dependency>
             <groupId>com.sencha.gxt</groupId>
             <artifactId>gxt</artifactId>
-            <version>3.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sencha.gxt</groupId>
-            <artifactId>gxt-theme-neptune</artifactId>
             <version>3.1.0</version>
         </dependency>
 
