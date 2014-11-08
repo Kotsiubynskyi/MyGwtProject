@@ -21,7 +21,8 @@
                              default-target-url="/gwt.html"
                              username-parameter="username"
                              password-parameter="password"/>
-        <security:intercept-url pattern="/**" access="ROLE_USER"/>
+        <!--Security is disabled by default. Uncomment next line if you want to enable security-->
+        <!--<security:intercept-url pattern="/**" access="ROLE_USER"/>-->
     </security:http>
 
 </beans>

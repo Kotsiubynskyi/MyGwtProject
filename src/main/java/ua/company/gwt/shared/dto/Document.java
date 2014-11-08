@@ -1,10 +1,10 @@
-package ua.company.gwt.client;
+package ua.company.gwt.shared.dto;
 
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author EvgeniyKot on 16.07.2014.
+ * @author Eugene on 16.07.2014.
  */
 
 public class Document implements Serializable {

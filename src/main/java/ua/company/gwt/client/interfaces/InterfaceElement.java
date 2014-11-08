@@ -3,7 +3,7 @@ package ua.company.gwt.client.interfaces;
 import com.google.gwt.user.client.ui.IsWidget;
 
 /**
- * @author EvgeniyKot on 03.11.2014.
+ * @author Eugene on 03.11.2014.
  */
 public abstract class InterfaceElement implements IsWidget{
 

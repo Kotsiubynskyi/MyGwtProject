@@ -10,5 +10,6 @@
     <servlet path='/Gwt/panelService' class='ua.company.gwt.server.AsyncPanelLoadingServiceImpl'/>
 
     <source path="client"/>
+    <source path="shared"/>
 
 </module>

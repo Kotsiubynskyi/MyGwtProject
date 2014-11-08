@@ -4,6 +4,8 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+    <display-name>MyGWT</display-name>
+
     <!--Processes GWT RPC-->
     <servlet>
         <servlet-name>ua.company.gwt.gwt gwtService</servlet-name>
@@ -35,8 +37,13 @@
     </filter-mapping>
 
     <welcome-file-list>
-        <welcome-file>/WEB-INF/pages/loginPage.jsp</welcome-file>
+        <welcome-file>/gwt.html</welcome-file>
     </welcome-file-list>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

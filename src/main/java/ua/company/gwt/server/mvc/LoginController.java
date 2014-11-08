@@ -9,10 +9,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 
-    @RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
     public ModelAndView welcome() {
         boolean isAuthenticated = SecurityContextHolder.getContext().getAuthentication().isAuthenticated();
-        System.out.println(isAuthenticated);
         if (isAuthenticated) {
             return new ModelAndView("redirect:/gwt.html");
         } else {

@@ -2,10 +2,9 @@ package ua.company.gwt.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.DOM;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
+import com.sencha.gxt.widget.core.client.container.Viewport;
 import ua.company.gwt.client.interfaces.MainContainer;
-import ua.company.gwt.client.services.GwtService;
 
 public class SuperUser implements EntryPoint {
 
@@ -13,30 +12,11 @@ public class SuperUser implements EntryPoint {
 
     public void onModuleLoad() {
         MainContainer container = new MainContainer();
-        GwtService.App.getInstance().storeUserInSession(new AsyncCallback<Void>() {
-            @Override
-            public void onFailure(Throwable caught) {
-
-            }
-
-            @Override
-            public void onSuccess(Void result) {
-                GwtService.App.getInstance().getUserFromSession(new AsyncCallback<String>() {
-                    @Override
-                    public void onFailure(Throwable caught) {
-
-                    }
-
-                    @Override
-                    public void onSuccess(String result) {
-                        msisdn = result;
-                    }
-                });
-            }
-        });
-
+        Viewport viewport = new Viewport();
+        viewport.setBorders(true);
+        viewport.setWidget(container);
         DOM.getElementById("loading").removeFromParent();
-        RootLayoutPanel.get().add(container);
+        RootLayoutPanel.get().add(viewport);
 
     }
 }

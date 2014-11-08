@@ -5,7 +5,7 @@ import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
 /**
- * @author EvgeniyKot on 03.11.2014.
+ * @author Eugene on 03.11.2014.
  */
 @RemoteServiceRelativePath("panelService")
 public interface AsyncPanelLoadingService extends RemoteService{

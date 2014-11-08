@@ -15,7 +15,7 @@
     </properties>
 
     <build>
-        <finalName>MyGWT.war</finalName>
+        <finalName>SuperClient.war</finalName>
         <plugins>
 
             <!--GWT plugin for javascript compilation-->
@@ -26,7 +26,7 @@
                 <configuration>
                     <runTarget>gwt.html</runTarget>
                     <module>ua.company.gwt.GwtModule</module>
-                    <style>OBFUSCATED</style>
+                    <style>DETAILED</style>
                 </configuration>
                 <executions>
                     <execution>
