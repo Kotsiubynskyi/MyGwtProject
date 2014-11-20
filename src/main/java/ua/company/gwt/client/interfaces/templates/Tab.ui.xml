@@ -1,0 +1,21 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:gxt='urn:import:com.sencha.gxt.widget.core.client'
+             xmlns:container='urn:import:com.sencha.gxt.widget.core.client.container'
+             xmlns:my='urn:import:ua.company.gwt.client.interfaces'>
+
+    <g:ScrollPanel>
+        <gxt:ContentPanel headerVisible="true" ui:field="cntPanel">
+            <g:HTMLPanel ui:field="htmlPanel">
+                <g:HorizontalPanel ui:field="hPanel">
+                    <g:cell>
+                        <my:CallsPanel ui:field="callsPanel1"/>
+                    </g:cell>
+                    <g:cell>
+                        <my:CallsPanel ui:field="callsPanel2"/>
+                    </g:cell>
+                </g:HorizontalPanel>
+            </g:HTMLPanel>
+        </gxt:ContentPanel>
+    </g:ScrollPanel>
+</ui:UiBinder>

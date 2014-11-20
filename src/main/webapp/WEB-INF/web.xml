@@ -9,20 +9,11 @@
     <!--Processes GWT RPC-->
     <servlet>
         <servlet-name>ua.company.gwt.gwt gwtService</servlet-name>
-        <servlet-class>ua.company.gwt.server.GwtServiceImpl</servlet-class>
+        <servlet-class>ua.company.gwt.server.SuperUserImpl</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ua.company.gwt.gwt gwtService</servlet-name>
         <url-pattern>/Gwt/gwtService</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>panelLoadingServiceImpl</servlet-name>
-        <servlet-class>ua.company.gwt.server.AsyncPanelLoadingServiceImpl</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>panelLoadingServiceImpl</servlet-name>
-        <url-pattern>/Gwt/panelService</url-pattern>
     </servlet-mapping>
 
     <!-- Spring Security -->

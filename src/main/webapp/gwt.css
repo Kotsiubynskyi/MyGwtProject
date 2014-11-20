@@ -2,6 +2,14 @@ body {
     background-color: #aecbdb;
 }
 
+.pointer-cursor {
+    cursor: default;
+}
+
+.background {
+    background-color: #BDD3EF;
+}
+
 body, td, a, div, .p {
     font-size: 12px;
     font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -46,15 +54,27 @@ body, td, a, div, .p {
     color: #ffffff;
 }
 
+.tabHeader,.tabFooter {
+    background-color: #55fd4b;
+    border-color: #93e35f;
+}
+
+.tabStripTop {
+    gwt-image: "tabStripBackground";
+    background-color: #f52ade;
+    border-bottom-color: #e34114;
+    /* Override @sprite behavior */
+    height: auto;
+    overflow: visible;
+}
+
 .margins {
-    margin: 0px 0px 2px 1px;
-    background-color: #bae0f0;
+    margin: 5px 0px 0px 5px;
 }
 
-.pointer {
-    cursor: pointer;
-}
-
-.pointer:hover {
-    cursor: pointer;
+.gwt-PopupPanelGlass {
+    background-color: black;
+    opacity: 0.4;
+    border-color: #8db2e3;
+    background-color: #deecfd;
 }

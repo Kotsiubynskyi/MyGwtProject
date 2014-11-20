@@ -7,12 +7,21 @@ import com.google.gwt.i18n.client.Constants;
  */
 public interface AppConstants extends Constants {
 
-    String docPaneTitle();
+    String appTitle();
+
+    String callsPanelTitle();
 
     String failureOccurred();
 
     String loading();
 
-    String appTitle();
+    String contentPanelBodyStyle();
 
+    String enterAccNumber();
+
+    String requestAccInfo();
+
+    String request();
+
+    String closeTab();
 }

@@ -1,5 +1,6 @@
-package ua.company.gwt.server.mvc;
+package ua.company.gwt.server.controllers;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,8 +12,10 @@ public class LoginController {
 
     @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
     public ModelAndView welcome() {
-        boolean isAuthenticated = SecurityContextHolder.getContext().getAuthentication().isAuthenticated();
-        if (isAuthenticated) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        System.out.println(authentication.isAuthenticated());
+        System.out.println(authentication.getPrincipal());
+        if (authentication.isAuthenticated()) {
             return new ModelAndView("redirect:/gwt.html");
         } else {
             return new ModelAndView("loginPage");

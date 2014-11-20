@@ -6,8 +6,7 @@
     <inherits name='com.google.gwt.user.User'/>
     <inherits name='com.sencha.gxt.ui.GXT'/>
     <entry-point class='ua.company.gwt.client.SuperUser'/>
-    <servlet path='/Gwt/gwtService' class='ua.company.gwt.server.GwtServiceImpl'/>
-    <servlet path='/Gwt/panelService' class='ua.company.gwt.server.AsyncPanelLoadingServiceImpl'/>
+    <servlet path='/Gwt/gwtService' class='ua.company.gwt.server.SuperUserImpl'/>
 
     <source path="client"/>
     <source path="shared"/>

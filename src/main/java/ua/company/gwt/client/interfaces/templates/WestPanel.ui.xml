@@ -1,0 +1,42 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:button='urn:import:com.sencha.gxt.widget.core.client.button'
+             xmlns:gxt='urn:import:com.sencha.gxt.widget.core.client'
+             xmlns:container='urn:import:com.sencha.gxt.widget.core.client.container'>
+
+    <!--Layout for TextField-->
+    <ui:with type="com.sencha.gxt.core.client.util.Margins" field="textFieldMargin">
+        <ui:attributes top="5" right="0" bottom="0" left="5"/>
+    </ui:with>
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BoxLayoutContainer.BoxLayoutData"
+             field="textFieldLayout">
+        <ui:attributes margins="{textFieldMargin}"/>
+    </ui:with>
+
+    <!--Layout for Button-->
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BoxLayoutContainer.BoxLayoutData"
+             field="buttonLayout">
+        <ui:attributes margins="{buttonMargin}"/>
+    </ui:with>
+    <ui:with type="com.sencha.gxt.core.client.util.Margins" field="buttonMargin">
+        <ui:attributes top="4" right="0" bottom="0" left="5"/>
+    </ui:with>
+
+    <ui:with field="CONSTANTS" type="ua.company.gwt.client.resources.AppConstants"/>
+
+    <!--Main Layout-->
+    <gxt:ContentPanel allowTextSelection="false" bodyStyle="{CONSTANTS.contentPanelBodyStyle}"
+                      headingText="{CONSTANTS.appTitle}">
+        <container:VBoxLayoutContainer>
+            <container:HBoxLayoutContainer HBoxLayoutAlign="TOP" pack="START">
+                <container:child layoutData="{textFieldLayout}">
+                    <g:TextBox ui:field="accountTextBox" width="150px" title="{CONSTANTS.enterAccNumber}"/>
+                </container:child>
+                <container:child layoutData="{buttonLayout}">
+                    <button:TextButton ui:field="requestButton" title="{CONSTANTS.requestAccInfo}"
+                                       text="{CONSTANTS.request}"/>
+                </container:child>
+            </container:HBoxLayoutContainer>
+        </container:VBoxLayoutContainer>
+    </gxt:ContentPanel>
+</ui:UiBinder>
