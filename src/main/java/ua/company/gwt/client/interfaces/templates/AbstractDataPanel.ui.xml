@@ -2,7 +2,9 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'
              xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client">
 
+    <ui:with field="CONSTANTS" type="ua.company.gwt.client.resources.AppConstants"/>
+
     <gxt:ContentPanel ui:field="contentPanel" allowTextSelection="false" styleName="margins">
-        <g:Label ui:field="loadingField"/>
+        <g:Label ui:field="loadingField" text="{CONSTANTS.loading}"/>
     </gxt:ContentPanel>
 </ui:UiBinder>

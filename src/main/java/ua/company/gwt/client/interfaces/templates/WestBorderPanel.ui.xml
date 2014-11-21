@@ -6,7 +6,7 @@
 
     <ui:with field="CONSTANTS" type="ua.company.gwt.client.resources.AppConstants"/>
 
-    <!--Layout for Widgets-->
+    <!--Margin for widgets-->
     <ui:with type="com.sencha.gxt.core.client.util.Margins" field="widgetMargin">
         <ui:attributes top="5" right="0" bottom="0" left="5"/>
     </ui:with>
@@ -15,7 +15,7 @@
         <ui:attributes margins="{widgetMargin}"/>
     </ui:with>
 
-    <!--Main Layout-->
+    <!--Main layout-->
     <gxt:ContentPanel allowTextSelection="false" bodyStyle="{CONSTANTS.contentPanelBodyStyle}"
                       headingText="{CONSTANTS.appTitle}">
         <container:VBoxLayoutContainer>

@@ -12,6 +12,7 @@ import com.sencha.gxt.widget.core.client.ContentPanel;
 import com.sencha.gxt.widget.core.client.button.ToolButton;
 import com.sencha.gxt.widget.core.client.event.SelectEvent;
 import ua.company.gwt.client.SuperClient;
+import ua.company.gwt.client.resources.AppConstants;
 
 //Parent class for every panel which contains data
 public abstract class AbstractDataPanel<T> extends Composite implements Refreshable {
@@ -21,6 +22,8 @@ public abstract class AbstractDataPanel<T> extends Composite implements Refresha
     ContentPanel contentPanel;
     @UiField
     Label loadingField;
+    @UiField(provided = true)
+    protected static AppConstants CONSTANTS = SuperClient.CONSTANTS;
 
     private static DataPanelUiBinder ourUiBinder = GWT.create(DataPanelUiBinder.class);
 
@@ -31,9 +34,7 @@ public abstract class AbstractDataPanel<T> extends Composite implements Refresha
     public AbstractDataPanel() {
         mainPanel = new FlexTable();
         initWidget(ourUiBinder.createAndBindUi(this));
-        loadingField.setText(SuperClient.CONSTANTS.loading());
         contentPanel.getHeader().addStyleName("pointer-cursor");
-        contentPanel.getHeader().setAllowTextSelection(false);
         ToolButton refreshButton = new ToolButton(ToolButton.REFRESH);
         refreshButton.addSelectHandler(new SelectEvent.SelectHandler() {
             @Override

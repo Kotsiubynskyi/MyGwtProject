@@ -4,7 +4,7 @@
              xmlns:gxt='urn:import:com.sencha.gxt.widget.core.client'
              xmlns:container='urn:import:com.sencha.gxt.widget.core.client.container'>
 
-    <!--West Panel layout-->
+    <!--West panel layout-->
     <ui:with field="layout" type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData">
         <ui:attributes size="250" minSize="250" maxSize="250" split="true" collapsible="true"/>
     </ui:with>
