@@ -5,8 +5,8 @@
 
     <inherits name='com.google.gwt.user.User'/>
     <inherits name='com.sencha.gxt.ui.GXT'/>
-    <entry-point class='ua.company.gwt.client.SuperUser'/>
-    <servlet path='/Gwt/gwtService' class='ua.company.gwt.server.SuperUserImpl'/>
+    <entry-point class='ua.company.gwt.client.SuperClient'/>
+    <servlet path='/Gwt/gwtService' class='ua.company.gwt.server.SuperClientServiceImpl'/>
 
     <source path="client"/>
     <source path="shared"/>

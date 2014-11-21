@@ -8,7 +8,7 @@ import com.sencha.gxt.widget.core.client.container.Viewport;
 import ua.company.gwt.client.interfaces.MainContainer;
 import ua.company.gwt.client.resources.AppConstants;
 
-public class SuperUser implements EntryPoint {
+public class SuperClient implements EntryPoint {
 
     public static AppConstants CONSTANTS = GWT.create(AppConstants.class);
 
@@ -19,7 +19,7 @@ public class SuperUser implements EntryPoint {
         DOM.getElementById("loading").removeFromParent();
         RootLayoutPanel.get().add(viewport);
 
-//      Set focus to text box for account input in west container panel after module loading
+        //Set focus to text box for account input in west container panel after module loading
         container.getWestBorderPanel().getAccountTextBox().getElement().focus();
     }
 }

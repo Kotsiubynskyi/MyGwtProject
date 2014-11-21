@@ -13,8 +13,6 @@ public class LoginController {
     @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
     public ModelAndView welcome() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println(authentication.isAuthenticated());
-        System.out.println(authentication.getPrincipal());
         if (authentication.isAuthenticated()) {
             return new ModelAndView("redirect:/gwt.html");
         } else {

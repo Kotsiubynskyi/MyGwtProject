@@ -1,0 +1,22 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:gwt='urn:import:com.google.gwt.user.client.ui'
+             xmlns:my='urn:import:ua.company.gwt.client.interfaces'
+             xmlns:gxt='urn:import:com.sencha.gxt.widget.core.client'
+             xmlns:container='urn:import:com.sencha.gxt.widget.core.client.container'>
+
+    <!--West Panel layout-->
+    <ui:with field="layout" type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData">
+        <ui:attributes size="250" minSize="250" maxSize="250" split="true" collapsible="true"/>
+    </ui:with>
+
+    <container:BorderLayoutContainer>
+        <container:west layoutData="{layout}">
+            <my:WestBorderPanel ui:field="westBorderPanel"/>
+        </container:west>
+        <container:center>
+            <gxt:TabPanel autoSelect="true" tabScroll="true" enabled="false" ui:field="tabPanel"/>
+        </container:center>
+
+    </container:BorderLayoutContainer>
+
+</ui:UiBinder>

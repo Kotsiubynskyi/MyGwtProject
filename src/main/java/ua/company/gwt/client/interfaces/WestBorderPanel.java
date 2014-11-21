@@ -13,26 +13,32 @@ import com.sencha.gxt.widget.core.client.ContentPanel;
 import com.sencha.gxt.widget.core.client.TabItemConfig;
 import com.sencha.gxt.widget.core.client.TabPanel;
 import com.sencha.gxt.widget.core.client.event.SelectEvent;
+import com.sencha.gxt.widget.core.client.info.DefaultInfoConfig;
 import com.sencha.gxt.widget.core.client.info.Info;
+import com.sencha.gxt.widget.core.client.info.InfoConfig;
 
 /**
  * @author EvgeniyKot on 13.11.2014
  */
 public class WestBorderPanel implements IsWidget {
-    private TabPanel tabPanel;
+    TabPanel tabPanel;
     @UiField
     TextBox accountTextBox;
     ContentPanel contentPanel;
 
-    @UiTemplate("templates/WestPanel.ui.xml")
-    interface WestPanelUiBinder extends UiBinder<ContentPanel, WestBorderPanel> {
+
+    @UiTemplate("templates/WestBorderPanel.ui.xml")
+    interface WestBorderPanelUiBinder extends UiBinder<ContentPanel, WestBorderPanel> {
     }
 
-    private static WestPanelUiBinder westPanelUiBinder = GWT.create(WestPanelUiBinder.class);
+    private static WestBorderPanelUiBinder westBorderPanelUiBinder = GWT.create(WestBorderPanelUiBinder.class);
 
-    public WestBorderPanel(TabPanel tabPanel) {
+    public WestBorderPanel() {
+        contentPanel = westBorderPanelUiBinder.createAndBindUi(this);
+    }
+
+    public void setTabPanel(TabPanel tabPanel) {
         this.tabPanel = tabPanel;
-        contentPanel = westPanelUiBinder.createAndBindUi(this);
     }
 
     @UiHandler("requestButton")
@@ -49,12 +55,20 @@ public class WestBorderPanel implements IsWidget {
     }
 
     private void createNewTab(Long account) {
+        Widget w = tabPanel.findItem("Client [" + account + "]", true);
+        if (w != null) {
+            tabPanel.setActiveWidget(w);
+            tabPanel.setTabIndex(tabPanel.getWidgetIndex(w));
+            InfoConfig ic = new DefaultInfoConfig("Notification", "Tab with this client account is already opened");
+            ic.setDisplay(4000);
+            Info.display(ic);
+            return;
+        }
+
         Tab newTab = new Tab(account, tabPanel);
         Widget tabWidget = new ScrollPanel(newTab);
         TabItemConfig tabItemConfig = new TabItemConfig("Client [" + account + "]");
-        if (!tabPanel.isAttached() || tabPanel == null) {
-            tabPanel = new TabPanel();
-        }
+        if (!tabPanel.isEnabled()) tabPanel.enable();
         tabPanel.add(tabWidget, tabItemConfig);
 
         //move to last created tab
@@ -62,12 +76,12 @@ public class WestBorderPanel implements IsWidget {
         tabPanel.setTabIndex(tabPanel.getWidgetCount() - 1);
     }
 
-    public TextBox getAccountTextBox() {
-        return accountTextBox;
-    }
-
     @Override
     public Widget asWidget() {
         return contentPanel;
+    }
+
+    public TextBox getAccountTextBox() {
+        return accountTextBox;
     }
 }

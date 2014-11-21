@@ -4,35 +4,27 @@
              xmlns:gxt='urn:import:com.sencha.gxt.widget.core.client'
              xmlns:container='urn:import:com.sencha.gxt.widget.core.client.container'>
 
-    <!--Layout for TextField-->
-    <ui:with type="com.sencha.gxt.core.client.util.Margins" field="textFieldMargin">
+    <ui:with field="CONSTANTS" type="ua.company.gwt.client.resources.AppConstants"/>
+
+    <!--Layout for Widgets-->
+    <ui:with type="com.sencha.gxt.core.client.util.Margins" field="widgetMargin">
         <ui:attributes top="5" right="0" bottom="0" left="5"/>
     </ui:with>
     <ui:with type="com.sencha.gxt.widget.core.client.container.BoxLayoutContainer.BoxLayoutData"
-             field="textFieldLayout">
-        <ui:attributes margins="{textFieldMargin}"/>
+             field="widgetLayout">
+        <ui:attributes margins="{widgetMargin}"/>
     </ui:with>
-
-    <!--Layout for Button-->
-    <ui:with type="com.sencha.gxt.widget.core.client.container.BoxLayoutContainer.BoxLayoutData"
-             field="buttonLayout">
-        <ui:attributes margins="{buttonMargin}"/>
-    </ui:with>
-    <ui:with type="com.sencha.gxt.core.client.util.Margins" field="buttonMargin">
-        <ui:attributes top="4" right="0" bottom="0" left="5"/>
-    </ui:with>
-
-    <ui:with field="CONSTANTS" type="ua.company.gwt.client.resources.AppConstants"/>
 
     <!--Main Layout-->
     <gxt:ContentPanel allowTextSelection="false" bodyStyle="{CONSTANTS.contentPanelBodyStyle}"
                       headingText="{CONSTANTS.appTitle}">
         <container:VBoxLayoutContainer>
             <container:HBoxLayoutContainer HBoxLayoutAlign="TOP" pack="START">
-                <container:child layoutData="{textFieldLayout}">
-                    <g:TextBox ui:field="accountTextBox" width="150px" title="{CONSTANTS.enterAccNumber}"/>
+                <container:child layoutData="{widgetLayout}">
+                    <g:TextBox ui:field="accountTextBox" width="150px" title="{CONSTANTS.enterAccNumber}"
+                               height="22px"/>
                 </container:child>
-                <container:child layoutData="{buttonLayout}">
+                <container:child layoutData="{widgetLayout}">
                     <button:TextButton ui:field="requestButton" title="{CONSTANTS.requestAccInfo}"
                                        text="{CONSTANTS.request}"/>
                 </container:child>

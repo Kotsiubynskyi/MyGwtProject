@@ -1,7 +1,7 @@
 package ua.company.gwt.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-import ua.company.gwt.client.services.SuperUser;
+import ua.company.gwt.client.services.SuperClientService;
 import ua.company.gwt.shared.dto.CallInfo;
 import ua.company.gwt.shared.dto.CallType;
 
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @author Eugene on 01.11.2014.
  */
-public class SuperUserImpl extends RemoteServiceServlet implements SuperUser {
+public class SuperClientServiceImpl extends RemoteServiceServlet implements SuperClientService {
 
     @Override
     public List<CallInfo> getDocuments(Long account) {

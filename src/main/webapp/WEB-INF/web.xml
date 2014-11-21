@@ -9,7 +9,7 @@
     <!--Processes GWT RPC-->
     <servlet>
         <servlet-name>ua.company.gwt.gwt gwtService</servlet-name>
-        <servlet-class>ua.company.gwt.server.SuperUserImpl</servlet-class>
+        <servlet-class>ua.company.gwt.server.SuperClientServiceImpl</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ua.company.gwt.gwt gwtService</servlet-name>

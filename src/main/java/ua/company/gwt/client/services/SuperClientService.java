@@ -8,14 +8,14 @@ import ua.company.gwt.shared.dto.CallInfo;
 import java.util.List;
 
 @RemoteServiceRelativePath("gwtService")
-public interface SuperUser extends RemoteService {
+public interface SuperClientService extends RemoteService {
 
     List<CallInfo> getDocuments(Long account);
 
     public static class App {
-        private static SuperUserAsync ourInstance = GWT.create(SuperUser.class);
+        private static SuperClientServiceAsync ourInstance = GWT.create(SuperClientService.class);
 
-        public static synchronized SuperUserAsync getInstance() {
+        public static synchronized SuperClientServiceAsync getInstance() {
             return ourInstance;
         }
     }

@@ -8,6 +8,6 @@ import java.util.List;
 /**
  * @author Eugene on 11.07.2014.
  */
-public interface SuperUserAsync {
+public interface SuperClientServiceAsync {
     void getDocuments(Long account, AsyncCallback<List<CallInfo>> async);
 }

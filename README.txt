@@ -9,4 +9,4 @@ applicationContext.xml
 
 To run application use maven command to package and deploy application:
 	mvn package jetty:deploy-war
-Application will available by http://localhost:8080/SuperClient/gwt.html
+Application will be available by http://localhost:8080/SuperClient/gwt.html

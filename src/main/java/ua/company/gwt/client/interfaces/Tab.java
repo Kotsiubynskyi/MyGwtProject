@@ -11,7 +11,7 @@ import com.sencha.gxt.widget.core.client.TabPanel;
 import com.sencha.gxt.widget.core.client.button.ToolButton;
 import com.sencha.gxt.widget.core.client.event.SelectEvent;
 import com.sencha.gxt.widget.core.client.toolbar.FillToolItem;
-import ua.company.gwt.client.SuperUser;
+import ua.company.gwt.client.SuperClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,14 +43,13 @@ public class Tab extends Composite {
         refreshTool.addSelectHandler(new SelectEvent.SelectHandler() {
             @Override
             public void onSelect(SelectEvent selectEvent) {
-
-                callsPanel1.refresh();
-                callsPanel2.refresh();
-
+                for (Refreshable widget : tabWidgets) {
+                    widget.refresh();
+                }
             }
         });
         ToolButton closeTool = new ToolButton(ToolButton.CLOSE);
-        closeTool.setTitle(SuperUser.CONSTANTS.closeTab());
+        closeTool.setTitle(SuperClient.CONSTANTS.closeTab());
         closeTool.addSelectHandler(new SelectEvent.SelectHandler() {
             @Override
             public void onSelect(SelectEvent selectEvent) {

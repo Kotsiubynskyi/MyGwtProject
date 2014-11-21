@@ -1,49 +1,45 @@
 package ua.company.gwt.client.interfaces;
 
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiTemplate;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.sencha.gxt.widget.core.client.TabPanel;
 import com.sencha.gxt.widget.core.client.container.BorderLayoutContainer;
-import com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData;
 import ua.company.gwt.client.interfaces.keyhandler.KeyHandler;
 
 /**
  * @author Eugene on 03.11.2014
  */
 public class MainContainer implements IsWidget {
-    private BorderLayoutData layoutData;
+
+    @UiField(provided = true)
+    WestBorderPanel westBorderPanel;
+    @UiField
+    TabPanel tabPanel;
     private BorderLayoutContainer container;
-    private WestBorderPanel westBorderPanel;
-    private TabPanel tabPanel;
+    private static MainContainerUiBinder ourUiBinder = GWT.create(MainContainerUiBinder.class);
 
-    public MainContainer() {
-        container = new BorderLayoutContainer();
-        layoutData = new BorderLayoutData(300);
-        layoutData.setCollapsible(true);
-        layoutData.setMaxSize(300);
-        layoutData.setMinSize(300);
-        layoutData.setSplit(true);
-
-        tabPanel = new TabPanel();
-        tabPanel.setAutoSelect(true);
-        tabPanel.setTabScroll(true);
-        tabPanel.setCloseContextMenu(true);
-        tabPanel.getContainer().addStyleName("background");
-
-        westBorderPanel = new WestBorderPanel(tabPanel);
-        westBorderPanel.accountTextBox.getElement().focus();
-        container.setWestWidget(westBorderPanel, layoutData);
-        container.setCenterWidget(tabPanel);
-
-        KeyHandler.init(container);
+    @UiTemplate("templates/MainContainer.ui.xml")
+    interface MainContainerUiBinder extends UiBinder<BorderLayoutContainer, MainContainer> {
     }
 
-    public WestBorderPanel getWestBorderPanel() {
-        return westBorderPanel;
+    public MainContainer() {
+        westBorderPanel = new WestBorderPanel();
+        container = ourUiBinder.createAndBindUi(this);
+        westBorderPanel.setTabPanel(tabPanel);
+        tabPanel.getContainer().addStyleName("background");
+        KeyHandler.init(container);
     }
 
     @Override
     public Widget asWidget() {
         return container;
+    }
+
+    public WestBorderPanel getWestBorderPanel() {
+        return westBorderPanel;
     }
 }

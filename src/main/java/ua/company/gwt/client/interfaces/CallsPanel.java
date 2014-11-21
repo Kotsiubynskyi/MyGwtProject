@@ -1,7 +1,8 @@
 package ua.company.gwt.client.interfaces;
 
 import com.google.gwt.user.client.ui.FlexTable;
-import ua.company.gwt.client.services.SuperUser;
+import ua.company.gwt.client.SuperClient;
+import ua.company.gwt.client.services.SuperClientService;
 import ua.company.gwt.shared.dto.CallInfo;
 
 import java.util.List;
@@ -20,8 +21,8 @@ public class CallsPanel extends AbstractDataPanel<List<CallInfo>> {
 
     @Override
     protected void requestData(DefaultAsyncCallback defaultAsyncCallback) {
-        contentPanel.getHeader().setText(ua.company.gwt.client.SuperUser.CONSTANTS.callsPanelTitle());
-        SuperUser.App.getInstance().getDocuments(account, defaultAsyncCallback);
+        contentPanel.getHeader().setText(SuperClient.CONSTANTS.callsPanelTitle());
+        SuperClientService.App.getInstance().getDocuments(account, defaultAsyncCallback);
     }
 
     @Override
