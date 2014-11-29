@@ -1,5 +1,10 @@
 body {
     background-color: #ffffff;
+    font-size: 8px !important;
+}
+
+td {
+    vertical-align: top;
 }
 
 .pointer-cursor {
@@ -54,7 +59,7 @@ body, td, a, div, .p {
     color: #ffffff;
 }
 
-.tabHeader,.tabFooter {
+.tabHeader, .tabFooter {
     background-color: #55fd4b;
     border-color: #93e35f;
 }

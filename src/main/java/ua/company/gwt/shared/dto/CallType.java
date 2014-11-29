@@ -9,6 +9,10 @@ public enum CallType {
     private String description;
 
     CallType(String s) {
-        this.description = description;
+        this.description = s;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
