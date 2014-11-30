@@ -33,16 +33,15 @@ public class CallsPanel extends AbstractDataPanel<List<CallInfo>> {
     }
 
     @Override
-    protected void requestData(DefaultAsyncCallback defaultAsyncCallback) {
+    protected void requestData(DefaultAsyncCallback callback) {
         contentPanel.getHeader().setText(SuperClient.CONSTANTS.callsPanelTitle());
-        SuperClientService.App.getInstance().getDocuments(account, defaultAsyncCallback);
+        SuperClientService.App.getInstance().getDocuments(account, callback);
     }
 
     @Override
     public void drawContent(List<CallInfo> data) {
         mainPanel.clear();
 
-        int i = 0;
         ListStore<CallInfo> store = new ListStore<CallInfo>(callProp.startDate());
         store.addAll(data);
 

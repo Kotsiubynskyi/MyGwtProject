@@ -49,12 +49,7 @@ public abstract class AbstractDataPanel<T> extends Composite implements Refresha
             }
         });
         contentPanel.addTool(refreshButton);
-        List<CallInfo> calls = new ArrayList<CallInfo>();
-        for (int i = 0; i < 10; i++) {
-            calls.add(new CallInfo("093988105" + i, 50000, 1, i % 2 == 0 ? CallType.IN : CallType.OUT, 141645960000L + i, 141645965000L + i));
-        }
-
-//        requestData(new DefaultAsyncCallback());
+        requestData(new DefaultAsyncCallback());
     }
 
     protected abstract void requestData(DefaultAsyncCallback defaultAsyncCallback);
@@ -74,7 +69,7 @@ public abstract class AbstractDataPanel<T> extends Composite implements Refresha
         }
     }
 
-    //Have to be called every time when panel drawing is finished
+    //Must be called every time when panel drawing is finished
     protected void finish() {
         contentPanel.clear();
         contentPanel.setWidget(mainPanel);
