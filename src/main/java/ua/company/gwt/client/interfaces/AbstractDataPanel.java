@@ -13,6 +13,11 @@ import com.sencha.gxt.widget.core.client.button.ToolButton;
 import com.sencha.gxt.widget.core.client.event.SelectEvent;
 import ua.company.gwt.client.SuperClient;
 import ua.company.gwt.client.resources.AppConstants;
+import ua.company.gwt.shared.dto.CallInfo;
+import ua.company.gwt.shared.dto.CallType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 //Parent class for every panel which contains data
 public abstract class AbstractDataPanel<T> extends Composite implements Refreshable {
@@ -24,6 +29,7 @@ public abstract class AbstractDataPanel<T> extends Composite implements Refresha
     Label loadingField;
     @UiField(provided = true)
     protected static AppConstants CONSTANTS = SuperClient.CONSTANTS;
+    List<CallInfo> calls = new ArrayList<CallInfo>();
 
     private static DataPanelUiBinder ourUiBinder = GWT.create(DataPanelUiBinder.class);
 
@@ -43,7 +49,12 @@ public abstract class AbstractDataPanel<T> extends Composite implements Refresha
             }
         });
         contentPanel.addTool(refreshButton);
-        requestData(new DefaultAsyncCallback());
+        List<CallInfo> calls = new ArrayList<CallInfo>();
+        for (int i = 0; i < 10; i++) {
+            calls.add(new CallInfo("093988105" + i, 50000, 1, i % 2 == 0 ? CallType.IN : CallType.OUT, 141645960000L + i, 141645965000L + i));
+        }
+
+//        requestData(new DefaultAsyncCallback());
     }
 
     protected abstract void requestData(DefaultAsyncCallback defaultAsyncCallback);
@@ -59,6 +70,7 @@ public abstract class AbstractDataPanel<T> extends Composite implements Refresha
         @Override
         public void onSuccess(T data) {
             drawContent(data);
+            finish();
         }
     }
 
@@ -67,7 +79,6 @@ public abstract class AbstractDataPanel<T> extends Composite implements Refresha
         contentPanel.clear();
         contentPanel.setWidget(mainPanel);
     }
-
 
     public void refresh() {
         mainPanel.clear(true);

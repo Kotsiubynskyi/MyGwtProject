@@ -17,7 +17,7 @@ public class SuperClientServiceImpl extends RemoteServiceServlet implements Supe
     public List<CallInfo> getDocuments(Long account) {
         List<CallInfo> calls = new ArrayList<CallInfo>();
         for (int i = 0; i < 10; i++) {
-            calls.add(new CallInfo("0939881057", 50000, 1, CallType.IN, 1416459600000L, 1416459650000L));
+            calls.add(new CallInfo("093988105" + i, 50000, 1, i % 2 == 0 ? CallType.IN : CallType.OUT, 141645960000L + i, 141645965000L + i));
         }
         try {
             Thread.sleep(800);

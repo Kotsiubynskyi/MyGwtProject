@@ -1,21 +1,40 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'
              xmlns:gxt='urn:import:com.sencha.gxt.widget.core.client'
-             xmlns:container='urn:import:com.sencha.gxt.widget.core.client.container'
              xmlns:my='urn:import:ua.company.gwt.client.interfaces'>
 
-    <g:ScrollPanel>
-        <gxt:ContentPanel headerVisible="true" ui:field="cntPanel">
+    <gxt:ContentPanel headerVisible="true" ui:field="cntPanel">
+        <g:ScrollPanel ui:field="scroll" alwaysShowScrollBars="true" height="96.3%">
             <g:HTMLPanel ui:field="htmlPanel">
-                <g:HorizontalPanel ui:field="hPanel">
-                    <g:cell>
-                        <my:CallsPanel ui:field="callsPanel1"/>
-                    </g:cell>
-                    <g:cell>
-                        <my:CallsPanel ui:field="callsPanel2"/>
-                    </g:cell>
-                </g:HorizontalPanel>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <my:CallsPanel ui:field="callsPanel1"/>
+                            </td>
+                            <td>
+                                <my:CallsPanel ui:field="callsPanel2"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <my:CallsPanel ui:field="callsPanel3"/>
+                            </td>
+                            <td>
+                                <my:CallsPanel ui:field="callsPanel4"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <my:CallsPanel ui:field="callsPanel5"/>
+                            </td>
+                            <td>
+                                <my:CallsPanel ui:field="callsPanel6"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </g:HTMLPanel>
-        </gxt:ContentPanel>
-    </g:ScrollPanel>
+        </g:ScrollPanel>
+    </gxt:ContentPanel>
 </ui:UiBinder>

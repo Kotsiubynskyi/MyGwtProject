@@ -5,6 +5,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.sencha.gxt.widget.core.client.ContentPanel;
 import com.sencha.gxt.widget.core.client.TabPanel;
@@ -29,8 +30,16 @@ public class Tab extends Composite {
         this.tabPanel = tabPanel;
         callsPanel1 = new CallsPanel(account);
         callsPanel2 = new CallsPanel(account);
+        callsPanel3 = new CallsPanel(account);
+        callsPanel4 = new CallsPanel(account);
+        callsPanel5 = new CallsPanel(account);
+        callsPanel6 = new CallsPanel(account);
         tabWidgets.add(callsPanel1);
         tabWidgets.add(callsPanel2);
+        tabWidgets.add(callsPanel3);
+        tabWidgets.add(callsPanel4);
+        tabWidgets.add(callsPanel5);
+        tabWidgets.add(callsPanel6);
 
         initWidget(ourUiBinder.createAndBindUi(this));
         cntPanel.setBodyBorder(false);
@@ -56,6 +65,7 @@ public class Tab extends Composite {
                 tabPanel.remove(tabPanel.getActiveWidget());
             }
         });
+        scroll.setAlwaysShowScrollBars(false);
         cntPanel.addTool(refreshTool);
         cntPanel.addTool(new FillToolItem());
         cntPanel.addTool(closeTool);
@@ -64,7 +74,7 @@ public class Tab extends Composite {
     private static TabUiBinder ourUiBinder = GWT.create(TabUiBinder.class);
 
     @UiTemplate("templates/Tab.ui.xml")
-    interface TabUiBinder extends UiBinder<ScrollPanel, Tab> {
+    interface TabUiBinder extends UiBinder<ContentPanel, Tab> {
     }
 
     @UiField(provided = true)
@@ -73,4 +83,16 @@ public class Tab extends Composite {
     CallsPanel callsPanel1;
     @UiField
     ContentPanel cntPanel;
+    @UiField
+    HTMLPanel htmlPanel;
+    @UiField
+    ScrollPanel scroll;
+    @UiField(provided = true)
+    CallsPanel callsPanel3;
+    @UiField(provided = true)
+    CallsPanel callsPanel4;
+    @UiField(provided = true)
+    CallsPanel callsPanel5;
+    @UiField(provided = true)
+    CallsPanel callsPanel6;
 }
